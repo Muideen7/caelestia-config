@@ -21,6 +21,8 @@ The included package lists (`packages-explicit.txt` and `packages-foreign.txt`) 
 - `files/home/frontendgeek/.config/hypr`: Hyprland configuration (Lua-based modular setup with `hyprland.lua`, `scheme/`, and window rules).
 - `files/home/frontendgeek/.config/walker`: Walker GTK4 launcher configuration (`config.toml`).
 - `files/home/frontendgeek/.config/elephant`: Elephant query daemon configuration (`elephant.toml`).
+- `files/home/frontendgeek/.config/fish`: Fish shell configuration, including `fish_greeting.fish` with dynamic CachyOS ASCII fish logo and redesigned Caelestia banner styled from active palette sequences.
+- `files/home/frontendgeek/.config/fastfetch`: Fastfetch system fetch configuration (`config.jsonc`).
 - `files/home/frontendgeek/.config/systemd/user`: User systemd service units (`caelestia-bridge.service`, `caelestia-connectd.service`, `elephant.service`, `walker.service`, `udiskie.service`).
 - `files/home/frontendgeek/.config/Thunar`: Thunar file manager custom actions (`uca.xml`).
 - `files/home/frontendgeek/.local/bin`: User helper scripts (`caelestia-clipboard.sh`, `caelestia-connect*`).
@@ -56,6 +58,8 @@ cp -r files/home/frontendgeek/.config/quickshell/caelestia ~/.config/quickshell/
 cp -r files/home/frontendgeek/.config/hypr ~/.config/
 cp files/home/frontendgeek/.config/walker/config.toml ~/.config/walker/
 cp files/home/frontendgeek/.config/elephant/elephant.toml ~/.config/elephant/
+cp -r files/home/frontendgeek/.config/fish ~/.config/
+cp -r files/home/frontendgeek/.config/fastfetch ~/.config/
 cp files/home/frontendgeek/.config/systemd/user/*.service ~/.config/systemd/user/
 
 # Target: ~/.local

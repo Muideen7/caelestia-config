@@ -30,6 +30,10 @@ An ultra-modern, aesthetic **Caelestia Desktop Environment** running on **Hyprla
   - Walker launcher keybindings (`Super + Space` for apps, `Super + Shift + D` for files).
   - Enhanced clipboard picker (`Super + V`) with one-click history clearing.
   - Communication workspace toggle (`Super + D` for WhatsApp / Discord / Equibop).
+- **Terminal Aesthetics & Greeting (`fish_greeting.fish`, `fastfetch`)**:
+  - Dynamic CachyOS ASCII art logo matching the active Material You scheme (using terminal OSC 4 sequences `$c1`, `$c2`, `$c3` from `~/.local/state/caelestia/sequences.txt`).
+  - Redesigned futuristic, slant Caelestia banner with horizontal gradient transitions.
+  - Integrated Fastfetch system summary aligned directly beneath the banner.
 
 ---
 
@@ -45,6 +49,8 @@ An ultra-modern, aesthetic **Caelestia Desktop Environment** running on **Hyprla
 │       │   ├── hypr/                 # Hyprland compositor configuration (Lua)
 │       │   ├── walker/               # Walker GTK4 launcher config
 │       │   ├── elephant/             # Elephant query daemon config
+│       │   ├── fish/                 # Interactive shell greeting with dynamic CachyOS ASCII logo
+│       │   ├── fastfetch/            # System fetch configuration aligned to greeting banner
 │       │   └── systemd/user/         # User systemd service units
 │       ├── .local/
 │       │   ├── bin/                  # User scripts (caelestia-clipboard.sh, caelestia-connect*)

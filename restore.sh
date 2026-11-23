@@ -27,6 +27,8 @@ backup_if_exists "$HOME/.config/quickshell/caelestia"
 backup_if_exists "$HOME/.config/hypr"
 backup_if_exists "$HOME/.config/walker/config.toml"
 backup_if_exists "$HOME/.config/elephant/elephant.toml"
+backup_if_exists "$HOME/.config/fish/functions/fish_greeting.fish"
+backup_if_exists "$HOME/.config/fastfetch"
 
 echo "==> Deploying files from snapshot..."
 mkdir -p "$HOME/.config/quickshell" \
@@ -36,6 +38,8 @@ mkdir -p "$HOME/.config/quickshell" \
          "$HOME/.config/elephant" \
          "$HOME/.config/systemd/user" \
          "$HOME/.config/Thunar" \
+         "$HOME/.config/fish/functions" \
+         "$HOME/.config/fastfetch" \
          "$HOME/.local/bin" \
          "$HOME/.local/share/Thunar/sendto" \
          "$HOME/.local/state/caelestia"
@@ -48,6 +52,8 @@ cp "$SOURCE_HOME/.config/walker/config.toml" "$HOME/.config/walker/"
 cp "$SOURCE_HOME/.config/elephant/elephant.toml" "$HOME/.config/elephant/"
 cp "$SOURCE_HOME/.config/systemd/user/"*.service "$HOME/.config/systemd/user/" 2>/dev/null || true
 cp -r "$SOURCE_HOME/.config/Thunar/"* "$HOME/.config/Thunar/" 2>/dev/null || true
+cp -r "$SOURCE_HOME/.config/fish/"* "$HOME/.config/fish/" 2>/dev/null || true
+cp -r "$SOURCE_HOME/.config/fastfetch/"* "$HOME/.config/fastfetch/" 2>/dev/null || true
 
 # Copy local bin, share & state
 cp -r "$SOURCE_HOME/.local/bin/"* "$HOME/.local/bin/" 2>/dev/null || true
