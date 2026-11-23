@@ -21,7 +21,9 @@ The included package lists (`packages-explicit.txt` and `packages-foreign.txt`) 
 - `files/home/frontendgeek/.config/walker`: Walker GTK4 launcher configuration (`config.toml`).
 - `files/home/frontendgeek/.config/elephant`: Elephant query daemon configuration (`elephant.toml`).
 - `files/home/frontendgeek/.config/systemd/user`: User systemd service units (`caelestia-bridge.service`, `caelestia-connectd.service`, `elephant.service`, `walker.service`, `udiskie.service`).
+- `files/home/frontendgeek/.config/Thunar`: Thunar file manager custom actions (`uca.xml`).
 - `files/home/frontendgeek/.local/bin`: User helper scripts (`caelestia-clipboard.sh`, `caelestia-connect*`).
+- `files/home/frontendgeek/.local/share/Thunar/sendto`: Thunar "Send To" integrations (`caelestia-connect-sendto.desktop`).
 - `files/home/frontendgeek/.local/state/caelestia`: Material You active palette definitions (`scheme.json`, `sequences.txt`, `theme`, `wallpaper`).
 
 ---

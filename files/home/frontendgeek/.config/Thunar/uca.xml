@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1710575157271461-1</unique-id>
+	<command>foot -D %f</command>
+	<description>Open the current directory in foot</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>org.caelestia.Connect</icon>
+	<name>Send via Caelestia Connect</name>
+	<submenu></submenu>
+	<unique-id>caelestia-connect-share-files</unique-id>
+	<command>/home/frontendgeek/.local/bin/caelestia-connect --share %F</command>
+	<description>Send selected file(s) to device via Caelestia Connect</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+</actions>

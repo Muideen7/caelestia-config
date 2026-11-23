@@ -35,7 +35,9 @@ mkdir -p "$HOME/.config/quickshell" \
          "$HOME/.config/walker" \
          "$HOME/.config/elephant" \
          "$HOME/.config/systemd/user" \
+         "$HOME/.config/Thunar" \
          "$HOME/.local/bin" \
+         "$HOME/.local/share/Thunar/sendto" \
          "$HOME/.local/state/caelestia"
 
 # Copy configurations
@@ -45,9 +47,11 @@ cp -r "$SOURCE_HOME/.config/hypr/"* "$HOME/.config/hypr/"
 cp "$SOURCE_HOME/.config/walker/config.toml" "$HOME/.config/walker/"
 cp "$SOURCE_HOME/.config/elephant/elephant.toml" "$HOME/.config/elephant/"
 cp "$SOURCE_HOME/.config/systemd/user/"*.service "$HOME/.config/systemd/user/" 2>/dev/null || true
+cp -r "$SOURCE_HOME/.config/Thunar/"* "$HOME/.config/Thunar/" 2>/dev/null || true
 
-# Copy local bin & state
+# Copy local bin, share & state
 cp -r "$SOURCE_HOME/.local/bin/"* "$HOME/.local/bin/" 2>/dev/null || true
+cp -r "$SOURCE_HOME/.local/share/Thunar/"* "$HOME/.local/share/Thunar/" 2>/dev/null || true
 cp -r "$SOURCE_HOME/.local/state/caelestia/"* "$HOME/.local/state/caelestia/" 2>/dev/null || true
 
 # Fix permissions

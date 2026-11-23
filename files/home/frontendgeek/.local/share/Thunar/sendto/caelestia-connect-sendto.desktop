@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Encoding=UTF-8
+Exec=/home/frontendgeek/.local/bin/caelestia-connect --share %F
+Icon=org.caelestia.Connect
+Name=Send via Caelestia Connect
