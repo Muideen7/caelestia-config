@@ -100,6 +100,8 @@ PageBase {
         // ====================================================================
         ConnectedRect {
             Layout.fillWidth: true
+            Layout.preferredWidth: root.cappedWidth
+            implicitWidth: root.cappedWidth
             first: true
             last: true
 
@@ -276,6 +278,8 @@ PageBase {
         StyledRect {
             visible: root.checking
             Layout.fillWidth: true
+            Layout.preferredWidth: root.cappedWidth
+            implicitWidth: root.cappedWidth
             implicitHeight: 120
             radius: Tokens.rounding.large
             color: Colours.tPalette.m3surfaceContainer
@@ -301,6 +305,8 @@ PageBase {
         StyledRect {
             visible: !root.checking && root.updatesList.length === 0
             Layout.fillWidth: true
+            Layout.preferredWidth: root.cappedWidth
+            implicitWidth: root.cappedWidth
             implicitHeight: 140
             radius: Tokens.rounding.large
             color: Colours.tPalette.m3surfaceContainer
@@ -336,6 +342,8 @@ PageBase {
         ColumnLayout {
             visible: !root.checking && root.updatesList.length > 0
             Layout.fillWidth: true
+            Layout.preferredWidth: root.cappedWidth
+            implicitWidth: root.cappedWidth
             spacing: Tokens.spacing.extraSmall
 
             Repeater {
@@ -348,6 +356,8 @@ PageBase {
                     required property int index
 
                     Layout.fillWidth: true
+                    Layout.preferredWidth: root.cappedWidth
+                    implicitWidth: root.cappedWidth
                     implicitHeight: 64
                     radius: Tokens.rounding.medium
                     color: Colours.tPalette.m3surfaceContainer
@@ -359,6 +369,7 @@ PageBase {
                         spacing: Tokens.spacing.medium
 
                         StyledClippingRect {
+                            Layout.alignment: Qt.AlignVCenter
                             implicitWidth: 38
                             implicitHeight: 38
                             radius: Tokens.rounding.full
@@ -374,9 +385,11 @@ PageBase {
 
                         ColumnLayout {
                             Layout.fillWidth: true
+                            Layout.alignment: Qt.AlignVCenter
                             spacing: 2
 
                             StyledText {
+                                Layout.fillWidth: true
                                 text: updateItem.modelData?.name ?? ""
                                 font: Tokens.font.body.medium
                                 color: Colours.palette.m3onSurface
@@ -384,6 +397,7 @@ PageBase {
                             }
 
                             RowLayout {
+                                Layout.fillWidth: true
                                 spacing: Tokens.spacing.extraSmall
 
                                 StyledText {
@@ -407,6 +421,7 @@ PageBase {
                         }
 
                         IconButton {
+                            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
                             icon: "download"
                             font: Tokens.font.icon.small
                             type: IconButton.Tonal

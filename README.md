@@ -121,3 +121,4 @@ paru -S quickshell-git caelestia-cli caelestia-shell hyprland walker elephant-bi
 ## 📜 License
 
 Distributed under the MIT License. See [LICENSE](config/quickshell/caelestia/LICENSE) for more details.
+

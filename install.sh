@@ -61,3 +61,4 @@ if command -v caelestia &>/dev/null; then
 fi
 
 echo "==> Installation complete! Enjoy your customized Caelestia DE."
+

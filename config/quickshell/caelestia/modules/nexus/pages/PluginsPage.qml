@@ -81,6 +81,8 @@ PageBase {
         // ====================================================================
         ConnectedRect {
             Layout.fillWidth: true
+            Layout.preferredWidth: root.cappedWidth
+            implicitWidth: root.cappedWidth
             first: true
             last: true
 
@@ -207,6 +209,8 @@ PageBase {
 
         ColumnLayout {
             Layout.fillWidth: true
+            Layout.preferredWidth: root.cappedWidth
+            implicitWidth: root.cappedWidth
             spacing: Tokens.spacing.extraSmall
 
             Repeater {
@@ -226,6 +230,8 @@ PageBase {
                     readonly property bool isEnabled: modelData?.enabled ?? false
 
                     Layout.fillWidth: true
+                    Layout.preferredWidth: root.cappedWidth
+                    implicitWidth: root.cappedWidth
                     implicitHeight: 68
                     radius: Tokens.rounding.medium
                     color: Colours.tPalette.m3surfaceContainer
@@ -237,6 +243,7 @@ PageBase {
                         spacing: Tokens.spacing.medium
 
                         StyledClippingRect {
+                            Layout.alignment: Qt.AlignVCenter
                             implicitWidth: 38
                             implicitHeight: 38
                             radius: Tokens.rounding.full
@@ -252,9 +259,11 @@ PageBase {
 
                         ColumnLayout {
                             Layout.fillWidth: true
+                            Layout.alignment: Qt.AlignVCenter
                             spacing: 2
 
                             RowLayout {
+                                Layout.fillWidth: true
                                 spacing: Tokens.spacing.small
 
                                 StyledText {
@@ -281,6 +290,7 @@ PageBase {
                             }
 
                             StyledText {
+                                Layout.fillWidth: true
                                 text: pluginCard.modelData?.description ?? ""
                                 font: Tokens.font.label.small
                                 color: Colours.palette.m3outline
@@ -289,6 +299,7 @@ PageBase {
                         }
 
                         StyledSwitch {
+                            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
                             checked: pluginCard.isEnabled
                             onToggled: {
                                 const pid = pluginCard.modelData?.id;
@@ -310,6 +321,8 @@ PageBase {
 
         ConnectedRect {
             Layout.fillWidth: true
+            Layout.preferredWidth: root.cappedWidth
+            implicitWidth: root.cappedWidth
             first: true
             last: true
             implicitHeight: customLayout.implicitHeight + Tokens.padding.largeIncreased * 2
