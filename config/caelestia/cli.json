@@ -1,0 +1,66 @@
+{
+    "record": {
+        "extraArgs": [
+            "-k",
+            "h264",
+            "-fallback-cpu-encoding",
+            "yes"
+        ]
+    },
+    "theme": {
+        "postHook": "mkdir -p \"$HOME/.config/walker/themes/caelestia\"; cp -f \"$HOME/.local/state/caelestia/theme/walker.css\" \"$HOME/.config/walker/themes/caelestia/style.css\"; systemctl --user try-restart walker.service; python3 \"$HOME/.config/caelestia/kde-scheme.py\"; python3 \"$HOME/.config/caelestia/antigravity-theme.py\"; sudo /usr/share/sddm/themes/caelestia/scripts/sync.sh --posthook",
+        "enableChromium": false
+    },
+    "wallpaper": {
+        "postHook": "mkdir -p \"$HOME/.config/walker/themes/caelestia\"; cp -f \"$HOME/.local/state/caelestia/theme/walker.css\" \"$HOME/.config/walker/themes/caelestia/style.css\"; systemctl --user try-restart walker.service; python3 \"$HOME/.config/caelestia/kde-scheme.py\"; python3 \"$HOME/.config/caelestia/antigravity-theme.py\"; sudo /usr/share/sddm/themes/caelestia/scripts/sync.sh --posthook"
+    },
+    "toggles": {
+        "communication": {
+            "discord": {
+                "enable": false
+            },
+            "whatsapp": {
+                "enable": false
+            },
+            "whatsie": {
+                "enable": true,
+                "match": [
+                    {
+                        "class": "com.ktechpit.whatsie"
+                    },
+                    {
+                        "initial_class": "com.ktechpit.whatsie"
+                    },
+                    {
+                        "initial_title": "WhatsApp Web"
+                    }
+                ],
+                "command": [
+                    "whatsie"
+                ],
+                "move": true
+            },
+            "equibop": {
+                "enable": true,
+                "match": [
+                    {
+                        "class": "equibop"
+                    },
+                    {
+                        "class": "Equibop"
+                    },
+                    {
+                        "initial_class": "equibop"
+                    },
+                    {
+                        "initial_class": "Equibop"
+                    }
+                ],
+                "command": [
+                    "equibop"
+                ],
+                "move": true
+            }
+        }
+    }
+}

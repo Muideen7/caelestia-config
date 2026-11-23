@@ -1,0 +1,64 @@
+{
+    "appearance": {
+        "transparency": {
+            "enabled": true
+        }
+    },
+    "bar": {
+        "activeWindow": {
+            "compact": true,
+            "inverted": false
+        },
+        "persistent": false,
+        "showOnHover": true
+    },
+    "launcher": {
+        "enabled": true,
+        "showOnHover": false,
+        "useFuzzy": {
+            "actions": true,
+            "apps": true,
+            "schemes": true,
+            "variants": true,
+            "wallpapers": true
+        }
+    },
+    "lock": {
+        "enableFprint": true,
+        "enabled": true,
+        "maxFprintTries": 3
+    },
+    "services": {
+        "smartScheme": true
+    },
+    "session": {
+        "commands": {
+            "hibernate": [
+                "systemctl",
+                "hibernate"
+            ],
+            "logout": [
+                "uwsm",
+                "stop"
+            ],
+            "reboot": [
+                "systemctl",
+                "reboot"
+            ],
+            "shutdown": [
+                "systemctl",
+                "poweroff"
+            ]
+        },
+        "enabled": true
+    },
+    "sidebar": {
+        "enabled": true,
+        "showOnHover": true
+    },
+    "utilities": {
+        "toasts": {
+            "fullscreen": "important"
+        }
+    }
+}

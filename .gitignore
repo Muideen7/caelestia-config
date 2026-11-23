@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C and C++ objects and archives
+*.so
+*.o
+*.a
+
+# Backup files
+*.bak*
+*~
+*.orig
+*.swp
+*.swo
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Elephant cache blobs (clipboard history)
+*.gob
