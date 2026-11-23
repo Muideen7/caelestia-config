@@ -1,0 +1,221 @@
+/* Walker theme for Caelestia — rendered from your wallpaper by Caelestia.
+ * Source:  ~/.config/caelestia/templates/walker.css
+ * Output:  ~/.config/walker/themes/caelestia/style.css  (via theme.postHook)
+ * Edit THIS file, not the generated one.
+ */
+
+@define-color cael_base #000000;
+@define-color cael_surface #081b2b;
+@define-color cael_raised #0b2133;
+@define-color cael_fg #d4e7ff;
+@define-color cael_fg_dim #96adc8;
+@define-color cael_accent #bbe2ff;
+@define-color cael_outline #334a61;
+@define-color cael_error #ff716c;
+@define-color cael_on_error #490006;
+
+* {
+  all: unset;
+}
+
+popover {
+  background: alpha(@cael_surface, 0.85);
+  border: 1px solid alpha(@cael_outline, 0.5);
+  border-radius: 18px;
+  padding: 10px;
+}
+
+.normal-icons {
+  -gtk-icon-size: 16px;
+}
+
+.large-icons {
+  -gtk-icon-size: 32px;
+}
+
+scrollbar {
+  opacity: 0;
+}
+
+.box-wrapper {
+  box-shadow:
+    0 19px 38px rgba(0, 0, 0, 0.28),
+    0 15px 12px rgba(0, 0, 0, 0.2);
+  background: alpha(@cael_base, 0.92);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid alpha(@cael_outline, 0.45);
+}
+
+.preview-box,
+.elephant-hint,
+.placeholder {
+  color: @cael_fg_dim;
+}
+
+.box {
+}
+
+.search-container {
+  border-radius: 10px;
+}
+
+.input placeholder {
+  opacity: 0.5;
+}
+
+.input selection {
+  background: alpha(@cael_accent, 0.35);
+}
+
+.input {
+  caret-color: @cael_accent;
+  background: alpha(@cael_raised, 0.6);
+  padding: 10px;
+  color: @cael_fg;
+  border-radius: 10px;
+}
+
+.input:focus,
+.input:active {
+}
+
+.content-container {
+}
+
+.placeholder {
+}
+
+.scroll {
+}
+
+.list {
+  color: @cael_fg;
+}
+
+child {
+}
+
+.item-box {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.item-quick-activation {
+  background: alpha(@cael_accent, 0.25);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* child:hover .item-box, */
+child:selected .item-box,
+row:selected .item-box {
+  background: alpha(@cael_accent, 0.22);
+}
+
+.item-text-box {
+}
+
+.item-subtext {
+  font-size: 12px;
+  opacity: 0.55;
+}
+
+.providerlist .item-subtext {
+  font-size: unset;
+  opacity: 0.75;
+}
+
+.item-image-text {
+  font-size: 28px;
+}
+
+.preview {
+  border: 1px solid alpha(@cael_outline, 0.4);
+  /* padding: 10px; */
+  border-radius: 10px;
+  color: @cael_fg;
+}
+
+.calc .item-text {
+  font-size: 24px;
+}
+
+.calc .item-subtext {
+}
+
+.symbols .item-image {
+  font-size: 24px;
+}
+
+.todo.done .item-text-box {
+  opacity: 0.25;
+}
+
+.todo.urgent {
+  font-size: 24px;
+}
+
+.todo.active {
+  font-weight: bold;
+}
+
+.bluetooth.disconnected {
+  opacity: 0.5;
+}
+
+.preview .large-icons {
+  -gtk-icon-size: 64px;
+}
+
+.keybinds {
+  padding-top: 10px;
+  border-top: 1px solid alpha(@cael_outline, 0.35);
+  font-size: 12px;
+  color: @cael_fg_dim;
+}
+
+.global-keybinds {
+}
+
+.item-keybinds {
+}
+
+.keybind {
+}
+
+.keybind-button {
+  opacity: 0.5;
+}
+
+.keybind-button:hover {
+  opacity: 0.75;
+}
+
+.keybind-bind {
+  text-transform: lowercase;
+  opacity: 0.35;
+}
+
+.keybind-label {
+  padding: 2px 4px;
+  border-radius: 4px;
+  border: 1px solid alpha(@cael_accent, 0.55);
+}
+
+.error {
+  padding: 10px;
+  border-radius: 8px;
+  background: @cael_error;
+  color: @cael_on_error;
+}
+
+:not(.calc).current {
+  font-style: italic;
+}
+
+.preview-content.archlinuxpkgs,
+.preview-content.dnfpackages,
+.preview-content.aptpackages {
+  font-family: monospace;
+}

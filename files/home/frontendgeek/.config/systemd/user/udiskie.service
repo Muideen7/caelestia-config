@@ -1,0 +1,12 @@
+[Unit]
+Description=udiskie removable disk automounter
+After=udisks2.service
+Wants=udisks2.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/udiskie --automount --notify
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
