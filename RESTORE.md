@@ -81,3 +81,4 @@ The public snapshot intentionally excludes:
 - Personal SMS, contacts, and pairing tokens (`~/.config/caelestia-connect/`).
 - Local database history, active notification store, and transient image/clipboard caches (`clipboard.gob`, `apps.sqlite`, `notifs.json`).
 - Ephemeral socket paths and machine-specific mount configurations.
+
