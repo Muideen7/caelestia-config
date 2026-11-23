@@ -231,7 +231,9 @@ PageBase {
 
                     Layout.fillWidth: true
                     Layout.preferredWidth: root.cappedWidth
+                    Layout.maximumWidth: root.cappedWidth
                     implicitWidth: root.cappedWidth
+                    width: root.cappedWidth
                     implicitHeight: 68
                     radius: Tokens.rounding.medium
                     color: Colours.tPalette.m3surfaceContainer
