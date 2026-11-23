@@ -12,6 +12,8 @@ import qs.utils
 Item {
     id: root
 
+    clip: true
+
     property string source: Wallpapers.current
     property CachingImage current
     property bool completed
@@ -21,7 +23,8 @@ Item {
             current = null;
         else
             current = imgComp.createObject(this, {
-                path: source
+                path: source,
+                initial: false
             });
     }
 
@@ -29,7 +32,8 @@ Item {
         if (source)
             Qt.callLater(() => {
                 current = imgComp.createObject(this, {
-                    path: source
+                    path: source,
+                    initial: true
                 });
                 completed = true;
             });
@@ -107,28 +111,112 @@ Item {
         CachingImage {
             id: img
 
+            property bool initial: false
+            readonly property bool isCurrent: root.current === img
+            property bool isReady: status === Image.Ready
+            property bool exiting: false
+
             anchors.fill: parent
+            transformOrigin: Item.Center
 
-            opacity: 0
+            opacity: initial ? 1 : 0
+            scale: initial ? 1.0 : 1.05
 
-            onStatusChanged: {
-                if (status === Image.Ready)
-                    anim.start();
+            function startEnter(): void {
+                if (initial)
+                    return;
+                enterAnim.start();
             }
 
-            Anim on opacity {
-                id: anim
+            function startExit(): void {
+                if (exiting)
+                    return;
+                exiting = true;
+                enterAnim.stop();
+                exitAnim.start();
+            }
 
-                type: Anim.SlowEffects
-                running: false
-                from: 0
-                to: 1
+            onStatusChanged: {
+                if (status === Image.Ready) {
+                    isReady = true;
+                    startEnter();
+                }
+            }
+
+            Component.onCompleted: {
+                if (status === Image.Ready) {
+                    isReady = true;
+                    startEnter();
+                }
+            }
+
+            Connections {
+                target: root
+                function onCurrentChanged(): void {
+                    if (!img.isCurrent && root.current && root.current.isReady) {
+                        img.startExit();
+                    }
+                }
             }
 
             Timer {
-                running: root.current !== img && root.current?.status === Image.Ready
-                interval: anim.duration
+                interval: 50
+                repeat: true
+                running: !img.isCurrent && !img.exiting && root.current && root.current.isReady
+                onTriggered: {
+                    stop();
+                    img.startExit();
+                }
+            }
+
+            Timer {
+                interval: 3000
+                running: !img.isCurrent
                 onTriggered: img.destroy()
+            }
+
+            ParallelAnimation {
+                id: enterAnim
+
+                NumberAnimation {
+                    target: img
+                    property: "opacity"
+                    from: 0
+                    to: 1
+                    duration: Tokens.anim.durations.large
+                    easing: Tokens.anim.emphasized
+                }
+
+                NumberAnimation {
+                    target: img
+                    property: "scale"
+                    from: 1.05
+                    to: 1.0
+                    duration: Tokens.anim.durations.large
+                    easing: Tokens.anim.emphasized
+                }
+            }
+
+            ParallelAnimation {
+                id: exitAnim
+
+                NumberAnimation {
+                    target: img
+                    property: "opacity"
+                    to: 0
+                    duration: Tokens.anim.durations.large
+                    easing: Tokens.anim.standard
+                }
+
+                NumberAnimation {
+                    target: img
+                    property: "scale"
+                    to: 0.98
+                    duration: Tokens.anim.durations.large
+                    easing: Tokens.anim.standard
+                }
+
+                onFinished: img.destroy()
             }
         }
     }

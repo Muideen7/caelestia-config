@@ -10,6 +10,7 @@ An ultra-modern, aesthetic **Caelestia Desktop Environment** running on **Hyprla
 
 - **Colours & Schemes Suite (`ColourSelect.qml`)**:
   - Live Wallpaper 3-Color Harmony: Derives Primary (borders & accents), Secondary (icons & interactive controls), and Tertiary (notifications) directly from the active wallpaper.
+  - Smooth Cinematic Wallpaper Transitions: Material 3 emphasized zoom (`1.05 → 1.0`) and crossfade transitions when switching wallpapers.
   - Material 3 Variants: Switch between *Tonal Spot, Vibrant, Expressive, Content, Fidelity, Monochrome, Fruit Salad, Neutral, Rainbow*.
   - Curated Schemes: Dynamic Material You, Catppuccin, and Caelestia presets with live color swatches.
 - **System Updates Page (`UpdatesPage.qml`)**:

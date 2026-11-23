@@ -14,6 +14,7 @@ The included package lists (`packages-explicit.txt` and `packages-foreign.txt`) 
 - `files/home/frontendgeek/.config/caelestia`: Main CLI hooks (`cli.json`), shell config (`shell.json`), user Hyprland binds (`hypr-user.lua`), user variables (`hypr-vars.lua`), Material You sync scripts (`antigravity-theme.py`, `kde-scheme.py`), launcher plugin manager (`plugins-helper.py`), SDDM templates, and monitor settings.
 - `files/home/frontendgeek/.config/quickshell/caelestia`: Complete Quickshell shell suite including:
   - **Nexus Settings**: Custom **Colours & Schemes** (`ColourSelect.qml`), **System Updates** (`UpdatesPage.qml`), **Plugins & Extensions** (`PluginsPage.qml`), and About page integration.
+  - **Background & Wallpapers**: Animated wallpaper switching with Material 3 emphasized zoom and crossfade transitions (`Wallpaper.qml`).
   - **Bar & Taskbar**: Workspace markers, active window title, system status icons, and clock.
   - **Utilities & Toggles**: Quick toggles with persistent Wi-Fi and Bluetooth state tracking.
   - **Lock & SDDM**: Lock screen, pam, and biometric integration.
