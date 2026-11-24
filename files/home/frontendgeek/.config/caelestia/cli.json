@@ -12,6 +12,7 @@
         "enableChromium": false
     },
     "wallpaper": {
+        "preserveVariant": true,
         "postHook": "mkdir -p \"$HOME/.config/walker/themes/caelestia\"; cp -f \"$HOME/.local/state/caelestia/theme/walker.css\" \"$HOME/.config/walker/themes/caelestia/style.css\"; systemctl --user try-restart walker.service; python3 \"$HOME/.config/caelestia/kde-scheme.py\"; python3 \"$HOME/.config/caelestia/antigravity-theme.py\"; sudo /usr/share/sddm/themes/caelestia/scripts/sync.sh --posthook"
     },
     "toggles": {

@@ -29,6 +29,7 @@ backup_if_exists "$HOME/.config/walker/config.toml"
 backup_if_exists "$HOME/.config/elephant/elephant.toml"
 backup_if_exists "$HOME/.config/fish/functions/fish_greeting.fish"
 backup_if_exists "$HOME/.config/fastfetch"
+backup_if_exists "$HOME/.local/lib/python3.14/site-packages/sitecustomize.py"
 
 echo "==> Deploying files from snapshot..."
 mkdir -p "$HOME/.config/quickshell" \
@@ -59,6 +60,11 @@ cp -r "$SOURCE_HOME/.config/fastfetch/"* "$HOME/.config/fastfetch/" 2>/dev/null 
 cp -r "$SOURCE_HOME/.local/bin/"* "$HOME/.local/bin/" 2>/dev/null || true
 cp -r "$SOURCE_HOME/.local/share/Thunar/"* "$HOME/.local/share/Thunar/" 2>/dev/null || true
 cp -r "$SOURCE_HOME/.local/state/caelestia/"* "$HOME/.local/state/caelestia/" 2>/dev/null || true
+
+# Deploy Python sitecustomize hook (preserves M3 variant on wallpaper changes)
+USER_SITE=$(python3 -c "import site; print(site.getusersitepackages())" 2>/dev/null || echo "$HOME/.local/lib/python3.14/site-packages")
+mkdir -p "$USER_SITE"
+cp -f "$SOURCE_HOME/.local/lib/python3.14/site-packages/sitecustomize.py" "$USER_SITE/" 2>/dev/null || true
 
 # Fix permissions
 echo "==> Setting script executable permissions..."

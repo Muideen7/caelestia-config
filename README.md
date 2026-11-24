@@ -11,7 +11,7 @@ An ultra-modern, aesthetic **Caelestia Desktop Environment** running on **Hyprla
 - **Colours & Schemes Suite (`ColourSelect.qml`)**:
   - Live Wallpaper 3-Color Harmony: Derives Primary (borders & accents), Secondary (icons & interactive controls), and Tertiary (notifications) directly from the active wallpaper.
   - Smooth Cinematic Wallpaper Transitions: Material 3 emphasized zoom (`1.05 → 1.0`) and crossfade transitions when switching wallpapers.
-  - Material 3 Variants: Switch between *Tonal Spot, Vibrant, Expressive, Content, Fidelity, Monochrome, Fruit Salad, Neutral, Rainbow*.
+  - Material 3 Variants & Persistence: Switch between *Tonal Spot, Vibrant, Expressive, Content, Fidelity, Monochrome, Fruit Salad, Neutral, Rainbow*. Your chosen variant (e.g., Expressive) is permanently preserved across wallpaper changes instead of reverting to Tonal Spot (powered by `cli.json` and `sitecustomize.py`).
   - Curated Schemes: Dynamic Material You, Catppuccin, and Caelestia presets with live color swatches.
 - **System Updates Page (`UpdatesPage.qml`)**:
   - Real-time system update monitoring powered by `paru` and `pacman`.
@@ -54,6 +54,7 @@ An ultra-modern, aesthetic **Caelestia Desktop Environment** running on **Hyprla
 │       │   └── systemd/user/         # User systemd service units
 │       ├── .local/
 │       │   ├── bin/                  # User scripts (caelestia-clipboard.sh, caelestia-connect*)
+│       │   ├── lib/                  # Python site customizations (sitecustomize.py preserves M3 variant)
 │       │   └── state/caelestia/      # Active palette tokens & wallpaper definitions
 ├── packages-explicit.txt             # Explicitly installed native packages (pacman -Qqe)
 ├── packages-foreign.txt              # Foreign/AUR packages installed (pacman -Qqm)
