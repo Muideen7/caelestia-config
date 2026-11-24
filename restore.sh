@@ -27,7 +27,7 @@ backup_if_exists "$HOME/.config/quickshell/caelestia"
 backup_if_exists "$HOME/.config/hypr"
 backup_if_exists "$HOME/.config/walker/config.toml"
 backup_if_exists "$HOME/.config/elephant/elephant.toml"
-backup_if_exists "$HOME/.config/fish/functions/fish_greeting.fish"
+backup_if_exists "$HOME/.config/fish/functions"
 backup_if_exists "$HOME/.config/fastfetch"
 backup_if_exists "$HOME/.local/lib/python3.14/site-packages/sitecustomize.py"
 

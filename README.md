@@ -30,10 +30,9 @@ An ultra-modern, aesthetic **Caelestia Desktop Environment** running on **Hyprla
   - Walker launcher keybindings (`Super + Space` for apps, `Super + Shift + D` for files).
   - Enhanced clipboard picker (`Super + V`) with one-click history clearing.
   - Communication workspace toggle (`Super + D` for WhatsApp / Discord / Equibop).
-- **Terminal Aesthetics & Greeting (`fish_greeting.fish`, `fastfetch`)**:
-  - Dynamic CachyOS ASCII art logo matching the active Material You scheme (using terminal OSC 4 sequences `$c1`, `$c2`, `$c3` from `~/.local/state/caelestia/sequences.txt`).
-  - Redesigned futuristic, slant Caelestia banner with horizontal gradient transitions.
-  - Integrated Fastfetch system summary aligned directly beneath the banner.
+- **Terminal Aesthetics & Random PNG Art Rotation (`fastfetch`, `fish_greeting.fish`)**:
+  - Dynamic image logo rotation inspired by `fastfetch-PNG`. On every new terminal instance (and `fastfetch` command), an art PNG is randomly chosen from `~/.config/fastfetch/images/`.
+  - Clean boxed system summary card aligned side-by-side with the active art logo (with top text banner removed for a minimal, modern aesthetic).
 
 ---
 
