@@ -83,8 +83,7 @@ hl.bind("ALT + TAB", function()
 end, { description = "Toggle previous workspace" })
 
 
--- Fix boot stutter: reset any lingering SDDM fingerprint session and flush DRM pipeline
+-- Reset any lingering SDDM fingerprint session on session start
 hl.on("hyprland.start", function()
     hl.exec_cmd("systemctl stop fprintd 2>/dev/null || true")
-    hl.dispatch(hl.dsp.dpms("on"))
 end)

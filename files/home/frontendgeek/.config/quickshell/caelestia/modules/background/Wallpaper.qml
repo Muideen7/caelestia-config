@@ -16,27 +16,33 @@ Item {
 
     property string source: Wallpapers.current
     property CachingImage current
-    property bool completed
+    property bool completed: false
 
-    onSourceChanged: {
-        if (!source)
+    function updateWallpaper(path: string): void {
+        if (!path) {
             current = null;
-        else
-            current = imgComp.createObject(this, {
-                path: source,
-                initial: false
-            });
+            return;
+        }
+
+        // On initial startup/boot, display the wallpaper immediately with full opacity
+        // and standard scale to eliminate any black screen flash or input delay.
+        const isInitial = !completed || current === null;
+        if (isInitial) {
+            completed = true;
+        }
+
+        current = imgComp.createObject(this, {
+            path: path,
+            initial: isInitial
+        });
     }
 
+    onSourceChanged: updateWallpaper(source)
+
     Component.onCompleted: {
-        if (source)
-            Qt.callLater(() => {
-                current = imgComp.createObject(this, {
-                    path: source,
-                    initial: true
-                });
-                completed = true;
-            });
+        if (source && current === null) {
+            updateWallpaper(source);
+        }
     }
 
     Loader {
@@ -132,7 +138,8 @@ Item {
                 if (exiting)
                     return;
                 exiting = true;
-                enterAnim.stop();
+                if (enterAnim.running)
+                    enterAnim.stop();
                 exitAnim.start();
             }
 
