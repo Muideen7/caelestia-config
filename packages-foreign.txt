@@ -28,4 +28,3 @@ todoist-appimage
 ttf-rubik-vf
 vscodium-bin
 vscodium-bin-marketplace
-whatsie-git

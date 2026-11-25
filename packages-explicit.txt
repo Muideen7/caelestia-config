@@ -231,7 +231,6 @@ vulkan-headers
 vulkan-intel
 walker
 wget
-whatsie-git
 which
 wireplumber
 wl-clipboard

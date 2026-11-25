@@ -23,24 +23,6 @@
             "whatsapp": {
                 "enable": false
             },
-            "whatsie": {
-                "enable": true,
-                "match": [
-                    {
-                        "class": "com.ktechpit.whatsie"
-                    },
-                    {
-                        "initial_class": "com.ktechpit.whatsie"
-                    },
-                    {
-                        "initial_title": "WhatsApp Web"
-                    }
-                ],
-                "command": [
-                    "whatsie"
-                ],
-                "move": true
-            },
             "equibop": {
                 "enable": true,
                 "match": [
