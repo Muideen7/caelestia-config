@@ -87,3 +87,10 @@ end, { description = "Toggle previous workspace" })
 hl.on("hyprland.start", function()
     hl.exec_cmd("systemctl stop fprintd 2>/dev/null || true")
 end)
+
+-- Prevent bright white flash during SDDM -> Hyprland handoff before Quickshell renders
+hl.config({
+    misc = {
+        background_color = "rgb(0d0f14)",
+    },
+})

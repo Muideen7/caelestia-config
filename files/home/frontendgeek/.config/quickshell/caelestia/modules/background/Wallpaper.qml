@@ -1,6 +1,7 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
+import QtQuick.Effects
 import Caelestia.Config
 import Caelestia.I18n
 import qs.components
@@ -121,23 +122,40 @@ Item {
             readonly property bool isCurrent: root.current === img
             property bool isReady: status === Image.Ready
             property bool exiting: false
+            property bool entered: false
+            property real unlockBlur: initial ? 0.75 : 0
 
             anchors.fill: parent
             transformOrigin: Item.Center
 
             opacity: initial ? 1 : 0
-            scale: initial ? 1.0 : 1.05
+            scale: initial ? 1.07 : 1.05
+
+            layer.enabled: unlockBlur > 0.001
+            layer.effect: MultiEffect {
+                autoPaddingEnabled: false
+                blurEnabled: true
+                blur: img.unlockBlur
+                blurMax: 48
+                blurMultiplier: 1
+            }
 
             function startEnter(): void {
-                if (initial)
+                if (entered)
                     return;
-                enterAnim.start();
+                entered = true;
+                if (initial)
+                    unlockAnim.start();
+                else
+                    enterAnim.start();
             }
 
             function startExit(): void {
                 if (exiting)
                     return;
                 exiting = true;
+                if (unlockAnim.running)
+                    unlockAnim.stop();
                 if (enterAnim.running)
                     enterAnim.stop();
                 exitAnim.start();
@@ -180,6 +198,28 @@ Item {
                 interval: 3000
                 running: !img.isCurrent
                 onTriggered: img.destroy()
+            }
+
+            ParallelAnimation {
+                id: unlockAnim
+
+                NumberAnimation {
+                    target: img
+                    property: "unlockBlur"
+                    from: 0.75
+                    to: 0.0
+                    duration: 650
+                    easing.type: Easing.OutCubic
+                }
+
+                NumberAnimation {
+                    target: img
+                    property: "scale"
+                    from: 1.07
+                    to: 1.0
+                    duration: 650
+                    easing.type: Easing.OutQuint
+                }
             }
 
             ParallelAnimation {

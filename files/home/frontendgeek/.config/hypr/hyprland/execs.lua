@@ -2,6 +2,9 @@ local vars = require("variables")
 local fn   = require("utils.functions")
 
 hl.on("hyprland.start", function()
+    -- Start shell immediately (bypass Python CLI wrapper to minimize login delay)
+    hl.exec_cmd("qs -c caelestia -n -d")
+
     -- Keyring and auth
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
     hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
@@ -24,9 +27,6 @@ hl.on("hyprland.start", function()
 
     -- Forward bluetooth media commands to MPRIS
     hl.exec_cmd("mpris-proxy")
-
-    -- Start shell
-    hl.exec_cmd("caelestia shell -d")
 end)
 
 -- Resizer listeners

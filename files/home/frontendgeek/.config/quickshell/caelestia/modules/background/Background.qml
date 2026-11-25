@@ -42,8 +42,6 @@ Variants {
             Loader {
                 id: wallpaper
 
-                asynchronous: true
-
                 anchors.fill: parent
                 active: Config.background.wallpaperEnabled
 
