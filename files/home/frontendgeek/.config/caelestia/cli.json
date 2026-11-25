@@ -8,12 +8,14 @@
         ]
     },
     "theme": {
-        "postHook": "mkdir -p \"$HOME/.config/walker/themes/caelestia\"; cp -f \"$HOME/.local/state/caelestia/theme/walker.css\" \"$HOME/.config/walker/themes/caelestia/style.css\"; systemctl --user try-restart walker.service; python3 \"$HOME/.config/caelestia/kde-scheme.py\"; python3 \"$HOME/.config/caelestia/antigravity-theme.py\"; bash \"$HOME/.config/caelestia/dnt-sync.sh\"; sudo /usr/share/sddm/themes/caelestia/scripts/sync.sh --posthook",
+        "iconThemeLight": "Caelestia-Folders",
+        "iconThemeDark": "Caelestia-Folders",
+        "postHook": "mkdir -p \"$HOME/.config/walker/themes/caelestia\"; cp -f \"$HOME/.local/state/caelestia/theme/walker.css\" \"$HOME/.config/walker/themes/caelestia/style.css\"; systemctl --user try-restart walker.service; python3 \"$HOME/.config/caelestia/kde-scheme.py\"; python3 \"$HOME/.config/caelestia/antigravity-theme.py\"; python3 \"$HOME/.config/caelestia/folder-icons.py\"; bash \"$HOME/.config/caelestia/dnt-sync.sh\"; sudo /usr/share/sddm/themes/caelestia/scripts/sync.sh --posthook",
         "enableChromium": false
     },
     "wallpaper": {
         "preserveVariant": true,
-        "postHook": "mkdir -p \"$HOME/.config/walker/themes/caelestia\"; cp -f \"$HOME/.local/state/caelestia/theme/walker.css\" \"$HOME/.config/walker/themes/caelestia/style.css\"; systemctl --user try-restart walker.service; python3 \"$HOME/.config/caelestia/kde-scheme.py\"; python3 \"$HOME/.config/caelestia/antigravity-theme.py\"; bash \"$HOME/.config/caelestia/dnt-sync.sh\"; sudo /usr/share/sddm/themes/caelestia/scripts/sync.sh --posthook"
+        "postHook": "mkdir -p \"$HOME/.config/walker/themes/caelestia\"; cp -f \"$HOME/.local/state/caelestia/theme/walker.css\" \"$HOME/.config/walker/themes/caelestia/style.css\"; systemctl --user try-restart walker.service; python3 \"$HOME/.config/caelestia/kde-scheme.py\"; python3 \"$HOME/.config/caelestia/antigravity-theme.py\"; python3 \"$HOME/.config/caelestia/folder-icons.py\"; bash \"$HOME/.config/caelestia/dnt-sync.sh\"; sudo /usr/share/sddm/themes/caelestia/scripts/sync.sh --posthook"
     },
     "toggles": {
         "communication": {

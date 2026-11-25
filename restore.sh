@@ -81,6 +81,11 @@ echo "==> Setting script executable permissions..."
 chmod +x "$HOME/.config/caelestia/"*.py "$HOME/.config/caelestia/"*.sh 2>/dev/null || true
 chmod +x "$HOME/.local/bin/"* 2>/dev/null || true
 
+# Generate dynamic Material 3 folder icons if Papirus is installed
+if command -v python3 &>/dev/null && [ -f "$HOME/.config/caelestia/folder-icons.py" ]; then
+    python3 "$HOME/.config/caelestia/folder-icons.py" || true
+fi
+
 echo "==> Reloading running services..."
 if command -v hyprctl &>/dev/null; then
     hyprctl reload &>/dev/null || true

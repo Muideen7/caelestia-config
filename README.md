@@ -40,7 +40,7 @@ An ultra-modern, aesthetic **Caelestia Desktop Environment** running on **Hyprla
   - Pre-wired via `caelestia-bridge.service` (`127.0.0.1:39123`) and `dnt-sync.sh` (runs cleanly as a no-op if not installed).
   - Completely optional: `restore.sh` offers to clone & register it by default (`--with-dnt` / `--no-dnt`), or you can clone it manually later.
 - **Unified Theming Pipeline**:
-  - Syncs desktop Material You colors to **Antigravity IDE** (`antigravity-theme.py`), KDE/Qt apps (`kde-scheme.py`), Walker GTK4 CSS, SDDM lock/login greeter, and optional Caelestia-DNT.
+  - Syncs desktop Material You colors to **Antigravity IDE** (`antigravity-theme.py`), KDE/Qt apps (`kde-scheme.py`), dynamic **Material 3 Folder Icons** (`folder-icons.py` → `~/.local/share/icons/Caelestia-Folders`), Walker GTK4 CSS, SDDM lock/login greeter, and optional Caelestia-DNT.
 - **Hyprland Overrides (`hypr-user.lua`)**:
   - Smart `Alt + Tab` workspace cycler (remembers normal and special workspaces).
   - Walker launcher keybindings (`Super + Space` for apps, `Super + Shift + D` for files).
